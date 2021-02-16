@@ -6,8 +6,8 @@ export default function Navbar() {
   return (
     <nav>
       <ul className="app-nav-list">
-        {routes.map(({ path, name }) =>
-          <li className="app-nav-item">
+        {routes.map(({ path, name }, key) =>
+          <li className="app-nav-item" key={key}>
             <Link to={path}>{name}</Link>
           </li>)}
       </ul>
