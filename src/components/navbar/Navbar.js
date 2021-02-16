@@ -1,20 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { routes } from "constants/routes";
 
-export default function Navbar({ navItems }) {
+export default function Navbar() {
   return (
     <nav>
       <ul className="app-nav-list">
-        {navItems.map(navItem =>
+        {routes.map(({path, name}) =>
           <li className="app-nav-item">
-            <Link to={navItem.route}>{navItem.name}</Link>
+            <Link to={path}>{name}</Link>
           </li>)}
       </ul>
     </nav>
   )
 }
-
-Navbar.propTypes = {
-  navItems: PropTypes.arrayOf(PropTypes.string)
-};
