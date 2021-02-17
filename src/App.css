@@ -23,7 +23,6 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	vertical-align: baseline;
 }
 
@@ -59,3 +58,48 @@ table {
 /*******************
 CUSTOM
 ********************/
+
+:root {
+  --font-size-1: 2.488rem;
+  --font-size-2: 2.074rem;
+  --font-size-3: 1.728rem;
+  --font-size-4: 1.44rem;
+  --font-size-5: 1.2rem;
+  --font-size-6: 1rem;
+}
+
+@media screen and (min-width: 500px) {
+  :root {
+    --font-size-1: 4.209rem;
+    --font-size-2: 3.157rem;
+    --font-size-3: 2.369rem;
+    --font-size-4: 1.777rem;
+    --font-size-5: 1.333rem;
+    --font-size-6: 1rem;
+  }
+}
+
+h1 {
+  font-size: var(--font-size-1);
+  letter-spacing: 2px;
+}
+h2 {
+  font-size: var(--font-size-2);
+  letter-spacing: 1px;
+}
+h3 {
+  font-size: var(--font-size-3);
+  letter-spacing: 1px;
+}
+h4 {
+  font-size: var(--font-size-4);
+}
+h5 {
+  font-size: var(--font-size-5);
+}
+h6 {
+  font-size: var(--font-size-6);
+}
+p {
+  font-size: var(--font-size-6);
+}

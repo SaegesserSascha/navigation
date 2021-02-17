@@ -1,7 +1,7 @@
 export default function Navigation1() {
   return(
     <div>
-      Navigation 1
+      <p>Navigation 1</p>
     </div>
   );
 }
