@@ -29,7 +29,7 @@ export default function Navigation1() {
       <nav id="nav" className={`navigation1-nav ${sticky ? " sticky" : ""}`} ref={ref}>
         <ul className="navigation1-nav-list">
           {routes.map(({ path, name }, key) =>
-            <li className={`navigation1-nav-item ${location.pathname === path ? " current-navigation1-nav" : ""}`} key={key}>
+            <li className={`navigation1-nav-item ${`/${location.pathname.split("/").pop()}` === path ? " current-navigation1-nav" : ""}`} key={key}>
               <Link to={`${match.url}${path}`}>
                 <p>{name}</p>
               </Link>
