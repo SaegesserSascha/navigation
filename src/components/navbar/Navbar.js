@@ -26,7 +26,7 @@ export default function Navbar() {
     <nav id="nav" className={`app-nav ${sticky ? " sticky" : ""}`} ref={ref}>
       <ul className="app-nav-list">
         {routes.map(({ path, name }, key) =>
-          <li className={`app-nav-item ${location.pathname === path ? " current-app-nav" : ""}`} key={key}>
+          <li className={`app-nav-item ${`/${location.pathname.split("/")[1]}` === path ? " current-app-nav" : ""}`} key={key}>
             <Link to={path}>
               <p>{name}</p>
             </Link>

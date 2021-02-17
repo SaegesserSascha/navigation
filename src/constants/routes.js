@@ -1,6 +1,6 @@
-import { default as Navigation1 } from "pages/Navigation1";
-import { default as Navigation2 } from "pages/Navigation2";
-import { default as Navigation3 } from "pages/Navigation3";
+import { default as Navigation1 } from "pages/navigation1/Navigation1";
+import { default as Navigation2 } from "pages/navigation2/Navigation2";
+import { default as Navigation3 } from "pages/navigation3/Navigation3";
 
 export const routes = [
   {

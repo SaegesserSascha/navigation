@@ -2,11 +2,10 @@ import {
   Route,
   Switch
 } from "react-router-dom";
-import { routes } from "constants/routes";
 
-export default function Routes(navItems) {
+export default function Routes({matchUrl = "", routes}) {
   const routeComponents = routes.map(({ path, component }, key) =>
-    <Route exact path={path} component={component} key={key} />
+    <Route path={`${matchUrl}${path}`} component={component} key={key} />
   );
 
   return (
