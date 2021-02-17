@@ -1,0 +1,82 @@
+:root {
+  --primary-color: #b71c1c;
+}
+
+.navigation1-nav {
+  justify-content: center;
+  background-color: var(--primary-color);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .5);
+  display: flex;
+  z-index: 100;
+} 
+
+.navigation1-nav-list {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  max-width: 1000px;
+  justify-content: center;
+}
+
+@media(min-width: 500px) {
+  .navigation1-nav-list {
+    flex-direction: row;
+    overflow-x: auto;
+    text-align: center;
+  }
+}
+
+.navigation1-nav-item {
+  align-items: stretch;
+  padding-left: 4px;
+  display: flex;
+  flex-grow: 1;
+  text-decoration: none;
+}
+
+@media(min-width: 500px) {
+  .navigation1-nav-item {
+    max-width: 150px;
+    padding: 4px 0;
+  }
+}
+
+.navigation1-nav-item a {
+  color: white;
+  flex-grow: 1;
+  padding: 1.5em;
+  text-decoration: none;
+}
+
+.navigation1-nav-item {
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+}
+
+.navigation1-nav-item:hover,
+.navigation1-nav-item:focus {
+  background-color: #c62828;
+}
+
+.navigation1-nav-item:active {
+  background-color: #8e0000;
+}
+
+.current-navigation1-nav {
+  border-left: 4px solid #fff;
+  padding-left: 0;
+}
+
+@media(min-width: 500px) {
+  .current-navigation1-nav {
+    border-left: 0;
+    border-bottom: 4px solid #fff;
+    padding-bottom: 0;
+  }
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}

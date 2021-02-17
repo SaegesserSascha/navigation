@@ -3,11 +3,14 @@
 }
 
 .app-nav {
-  justify-content: center;
   background-color: var(--primary-color);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, .5);
+  bottom: 0;
+  box-shadow: 0 -5px 5px rgba(0, 0, 0, .5);
   display: flex;
-  margin-bottom: 1em;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
 } 
 
 .app-nav-list {
@@ -71,8 +74,8 @@
 @media(min-width: 500px) {
   .current-app-nav {
     border-left: 0;
-    border-bottom: 4px solid #fff;
-    padding-bottom: 0;
+    border-top: 4px solid #fff;
+    padding-top: 0;
   }
 }
 
