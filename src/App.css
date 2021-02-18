@@ -103,3 +103,15 @@ h6 {
 p {
   font-size: var(--font-size-6);
 }
+
+.content {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 500px;
+  width: 100vw;
+}
+
+.content > * {
+  font-size: 2rem;
+}

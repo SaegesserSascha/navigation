@@ -1,16 +1,18 @@
 :root {
+  --active-color: #8e0000;
+  --hover-color: #c62828;
   --primary-color: #b71c1c;
 }
 
-.navigation1-nav {
-  justify-content: center;
+.navigation1 {
   background-color: var(--primary-color);
   box-shadow: 0 5px 5px rgba(0, 0, 0, .5);
   display: flex;
+  justify-content: center;
   z-index: 100;
 } 
 
-.navigation1-nav-list {
+.navigation1-list {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
@@ -19,64 +21,64 @@
 }
 
 @media(min-width: 500px) {
-  .navigation1-nav-list {
+  .navigation1-list {
     flex-direction: row;
     overflow-x: auto;
     text-align: center;
   }
 }
 
-.navigation1-nav-item {
+.navigation1-list a {
   align-items: stretch;
-  padding-left: 4px;
-  display: flex;
-  flex-grow: 1;
-  text-decoration: none;
-}
-
-@media(min-width: 500px) {
-  .navigation1-nav-item {
-    max-width: 150px;
-    padding: 4px 0;
-  }
-}
-
-.navigation1-nav-item a {
+  background-color: var(--primary-color);
+  border: var(--primary-color);
   color: white;
+  cursor: pointer;
+  display: flex;
   flex-grow: 1;
   padding: 1.5em;
   text-decoration: none;
 }
 
-.navigation1-nav-item {
-  background-color: var(--primary-color);
-  color: white;
-  text-decoration: none;
-}
-
-.navigation1-nav-item:hover,
-.navigation1-nav-item:focus {
-  background-color: #c62828;
-}
-
-.navigation1-nav-item:active {
-  background-color: #8e0000;
-}
-
-.current-navigation1-nav {
-  border-left: 4px solid #fff;
-  padding-left: 0;
-}
-
 @media(min-width: 500px) {
-  .current-navigation1-nav {
-    border-left: 0;
-    border-bottom: 4px solid #fff;
-    padding-bottom: 0;
+  .navigation1-list a {
+    max-width: 150px;
+    padding: 1.5em 2.5em;
   }
+}
+
+.navigation1-list a:hover,
+.navigation1-list a:focus {
+  background-color: var(--hover-color);
+}
+
+.navigation1-list a:active {
+  background-color: var(--active-color);
+}
+
+.navigation1-active-item {
+  background-color: var(--active-color) !important;
+}
+
+.navigation1-collapsable-container {
+  align-items: center;
+  display: flex;
+}
+
+.navigation1-collapsable-container > p {
+  margin-right: 1em;
+}
+
+.navigation1-sublist {
+  display: block;
+  position: relative;
 }
 
 .sticky {
   position: sticky;
   top: 0;
+}
+
+.collapsed {
+  display: none;
 }

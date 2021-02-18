@@ -1,7 +1,7 @@
 export default function Page5() {
-  return(
-    <div>
-      <p>Page 5</p>
+  return (
+    <div className="content">
+      <p>Page 4</p>
     </div>
   );
 }

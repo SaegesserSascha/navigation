@@ -1,11 +1,12 @@
 import "./style.css";
 import { useEffect, useRef, useState } from "react";
-import { Link, useLocation, useRouteMatch } from "react-router-dom";
+import { useRouteMatch } from "react-router-dom";
 import { routes } from "constants/exampleRoutes";
 import Routes from "components/Routes";
+import Navigation1ListItem from "./Navigation1ListItem";
+import Navigation1SubList from "./Navigation1SubList";
 
 export default function Navigation1() {
-  const location = useLocation(null);
   const [sticky, setSticky] = useState(false);
   const ref = useRef(null);
   const match = useRouteMatch();
@@ -26,14 +27,15 @@ export default function Navigation1() {
 
   return (
     <div className="navigation1-container">
-      <nav id="nav" className={`navigation1-nav ${sticky ? " sticky" : ""}`} ref={ref}>
-        <ul className="navigation1-nav-list">
-          {routes.map(({ path, name }, key) =>
-            <li className={`navigation1-nav-item ${`/${location.pathname.split("/").pop()}` === path ? " current-navigation1-nav" : ""}`} key={key}>
-              <Link to={`${match.url}${path}`}>
-                <p>{name}</p>
-              </Link>
-            </li>)}
+      <nav id="nav" className={`navigation1 ${sticky ? " sticky" : ""}`} ref={ref}>
+        <ul className="navigation1-list">
+          {routes.map(({ path, name, children = [] }, key) => {
+            if (children.length > 0) {
+              return <Navigation1SubList name={name} children={children} key={key} />
+            } else {
+              return <Navigation1ListItem path={path} name={name} key={key} />
+            }
+          })}
         </ul>
       </nav>
       <Routes matchUrl={match.url} routes={routes} />
