@@ -1,11 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { useRouteMatch } from "react-router-dom";
 import Navigation1ListItem from "./Navigation1ListItem";
 import { AiOutlineUp, AiOutlineDown } from "react-icons/ai";
 
 export default function Navigation1SubList({ name, children }) {
-  const match = useRouteMatch();
-
   const [isCollapsed, setIsCollapsed] = useState(true);
   const isCollapsedRef = useRef(isCollapsed)
 

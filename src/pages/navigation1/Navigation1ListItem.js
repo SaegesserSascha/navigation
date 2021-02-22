@@ -9,7 +9,9 @@ export default function Navigation1ListItem({ path, name }) {
     <li>
       <Link
         to={`${match.url}${path}`}
-        className={`${`/${location.pathname.split("/").pop()}` === path ? "navigation1-active-item" : ""}`}
+        className={`${`/${location.pathname.split("/").pop()}` === path
+          ? "navigation1-active-item"
+          : ""}`}
       >
         <p>{name}</p>
       </Link>
