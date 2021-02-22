@@ -1,10 +1,12 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useHistory } from "react-router-dom";
 import Navigation1ListItem from "./Navigation1ListItem";
 import { AiOutlineUp, AiOutlineDown } from "react-icons/ai";
 
 export default function Navigation1SubList({ name, children }) {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const isCollapsedRef = useRef(isCollapsed)
+  const history = useHistory();
 
   const toggleIsCollapsed = useCallback(() =>
     setIsCollapsed(!isCollapsedRef.current),
@@ -14,6 +16,13 @@ export default function Navigation1SubList({ name, children }) {
   useEffect(() => {
     isCollapsedRef.current = isCollapsed;
   }, [isCollapsed])
+
+  
+  useEffect(() => {
+    return history.listen(() => {
+      setIsCollapsed(true);
+    });
+  }, [history]);
 
   return (
     <li onClick={toggleIsCollapsed}>
