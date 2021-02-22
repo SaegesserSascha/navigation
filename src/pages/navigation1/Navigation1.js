@@ -26,7 +26,7 @@ export default function Navigation1() {
   }, []);
 
   return (
-    <div className="navigation1-container">
+    <div>
       <nav id="nav1" className={`navigation1 ${sticky ? " sticky" : ""}`} ref={ref}>
         <ul className="navigation1-list">
           {routes.map(({ path, name, children = [] }, key) => {
