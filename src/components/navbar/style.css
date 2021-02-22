@@ -3,7 +3,6 @@
 }
 
 .app-nav {
-  align-items: center;
   background-color: var(--primary-color);
   bottom: 0;
   box-shadow: 0 -5px 5px rgba(0, 0, 0, .5);
@@ -13,6 +12,12 @@
   position: fixed;
   width: 100vw;
   z-index: 100;
+}
+
+@media(min-width: 500px) {
+  .app-nav {
+    align-items: center;
+  }
 }
 
 .app-nav-toggler {
